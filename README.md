@@ -2,7 +2,7 @@
 Example of PlutoBoard using Vite + Vue
 
 ## Setup
-`git clone https://github.com/UniStuttgart-IKR/PlutoBoardExamples/tree/juliacon`
+`git clone -b juliacon https://github.com/UniStuttgart-IKR/PlutoBoardExamples/tree/juliacon`
 
 `cd JuliaCon`
 
