@@ -1,5 +1,7 @@
 module Bare
 
-greet() = print("Hello World!")
+using PlutoBoard
 
-end # module Bare
+include("Main.jl")
+
+end

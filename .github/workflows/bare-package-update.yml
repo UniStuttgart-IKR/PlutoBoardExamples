@@ -1,0 +1,75 @@
+name: Update PlutoBoardExamples Package in Bare
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  update-package:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Julia
+      uses: julia-actions/setup-julia@v1
+      with:
+        version: '1.10'
+        
+    - name: Change to Bare directory
+      run: cd Bare
+      
+    - name: Activate Bare project and update package
+      run: |
+        cd Bare
+        julia --project=. -e '
+          using Pkg
+          println("Activating project in Bare directory...")
+          Pkg.activate(".")
+          
+          println("Current project status:")
+          Pkg.status()
+          
+          println("Removing PlutoBoardExamples package...")
+          try
+            Pkg.rm("PlutoBoardExamples")
+            println("Successfully removed PlutoBoardExamples")
+          catch e
+            println("Package PlutoBoardExamples not found or already removed: ", e)
+          end
+          
+          println("Adding PlutoBoardExamples from GitHub URL...")
+          Pkg.add(url="https://github.com/Niels1006/PlutoBoardExamples")
+          
+          println("Final project status:")
+          Pkg.status()
+          
+          println("Package update completed successfully!")
+        '
+        
+    - name: Verify package installation
+      run: |
+        cd Bare
+        julia --project=. -e '
+          using Pkg
+          Pkg.status()
+          println("Attempting to load PlutoBoardExamples...")
+          using PlutoBoardExamples
+          println("PlutoBoardExamples loaded successfully!")
+        '
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Bare/Project.toml Bare/Manifest.toml
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update PlutoBoardExamples package in Bare project"
+          git push
+        fi
