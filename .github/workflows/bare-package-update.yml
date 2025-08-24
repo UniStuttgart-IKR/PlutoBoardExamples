@@ -18,7 +18,7 @@ jobs:
     - name: Setup Julia
       uses: julia-actions/setup-julia@v1
       with:
-        version: '1.10'
+        version: '1.11'
         
     - name: Change to Bare directory
       run: cd Bare
@@ -34,17 +34,21 @@ jobs:
           println("Current project status:")
           Pkg.status()
           
-          println("Removing PlutoBoardExamples package...")
+          println("Removing PlutoBoardExamples and PlutoBoard package...")
           try
             Pkg.rm("PlutoBoardExamples")
-            println("Successfully removed PlutoBoardExamples")
+            Pkg.rm("PlutoBoard")
+            println("Successfully removed PlutoBoardExamples and PlutoBoard")
           catch e
-            println("Package PlutoBoardExamples not found or already removed: ", e)
+            println("Package PlutoBoardExamples or PlutoBoard not found or already removed: ", e)
           end
           
           println("Adding PlutoBoardExamples from GitHub URL...")
           Pkg.add(url="https://github.com/Niels1006/PlutoBoardExamples")
-          
+
+          println("Adding PlutoBoard from GitHub URL...")
+          Pkg.add(url="https://github.com/UniStuttgart-IKR/PlutoBoard.jl")
+
           println("Final project status:")
           Pkg.status()
           
