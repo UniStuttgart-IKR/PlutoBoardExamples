@@ -1,8 +1,8 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.11.3"
+julia_version = "1.11.6"
 manifest_format = "2.0"
-project_hash = "85c857f22c7773782cc37010b139d9aa67e07463"
+project_hash = "719c6ac6296395e3fcf0508c64da001f931e0214"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -279,13 +279,15 @@ uuid = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
 version = "0.20.17"
 
 [[deps.PlutoBoard]]
-deps = ["FileWatching", "HTTP", "HypertextLiteral", "JSON", "MacroTools", "Pkg", "Pluto", "PlutoBoardExamples", "REPL", "TOML", "UUIDs"]
-path = "../../PlutoBoard.jl"
+deps = ["FileWatching", "HTTP", "HypertextLiteral", "JSON", "MacroTools", "Pkg", "Pluto", "TOML", "UUIDs"]
+git-tree-sha1 = "fba2d497e2b81fbdfcaf9bde4348ece168a3f4aa"
+repo-rev = "main"
+repo-url = "https://github.com/UniStuttgart-IKR/PlutoBoard.jl"
 uuid = "447e6095-edb7-4c27-ab1f-4a324c08f539"
 version = "0.1.2"
 
 [[deps.PlutoBoardExamples]]
-git-tree-sha1 = "047faca518f3a2c28a52b1e173b2fa467d200ae5"
+git-tree-sha1 = "e1e77a4b5e1aee065dc70aaa80b9433f091e7d31"
 repo-rev = "main"
 repo-url = "https://github.com/Niels1006/PlutoBoardExamples"
 uuid = "91d2b6b3-4ae6-4799-974e-80d2209419ca"
