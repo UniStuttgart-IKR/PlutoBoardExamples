@@ -9,6 +9,9 @@ Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 PlutoBoard = "447e6095-edb7-4c27-ab1f-4a324c08f539"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
 
+[sources]
+PlutoBoardExamples = {url = "https://github.com/UniStuttgart-IKR/PlutoBoardExamples"}
+
 [compat]
 CairoMakie = "0.13.4"
 Distributions = "0.25.119"
