@@ -2,7 +2,7 @@
 
 julia_version = "1.11.3"
 manifest_format = "2.0"
-project_hash = "f4ec11110eca86cef6d37fa1436994a4af9999e4"
+project_hash = "dfc7d0e55be499f2d7080f50fa0dd2b7488942cb"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -1096,6 +1096,13 @@ repo-rev = "main"
 repo-url = "https://github.com/UniStuttgart-IKR/PlutoBoard.jl"
 uuid = "447e6095-edb7-4c27-ab1f-4a324c08f539"
 version = "0.1.2"
+
+[[deps.PlutoBoardExamples]]
+git-tree-sha1 = "195abe8ddfbd38ca75dc0754d10b022c6ece8d1e"
+repo-rev = "main"
+repo-url = "https://github.com/UniStuttgart-IKR/PlutoBoardExamples"
+uuid = "91d2b6b3-4ae6-4799-974e-80d2209419ca"
+version = "0.1.0"
 
 [[deps.PlutoDependencyExplorer]]
 deps = ["ExpressionExplorer", "InteractiveUtils", "Markdown"]
