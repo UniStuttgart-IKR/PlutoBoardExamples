@@ -8,4 +8,5 @@ PlutoBoard = "447e6095-edb7-4c27-ab1f-4a324c08f539"
 PlutoBoardExamples = "91d2b6b3-4ae6-4799-974e-80d2209419ca"
 
 [compat]
+PlutoBoard = "0.1.2"
 PlutoBoardExamples = "0.1.0"
